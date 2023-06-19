@@ -1,0 +1,8 @@
+.history
+.vscode
+__pycache__
+venv
+logs
+test*.py
+user_code.json
+*/download/*

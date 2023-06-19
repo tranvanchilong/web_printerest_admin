@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+<div id="content" class="site-content">
+	<div class="featured-slider wrap-style-grid">
+		<div class="container">
+			<div class="row">
+				<div id="sonia-slider" class="style-grid feat-overlay-2">
+					<div class="item first">
+						<a href="{{ data.posts[0].url }}">
+							<div class="image-overlay" style="background-image:url({{ data.posts[0].img }})">
+							</div>
+						</a>
+						<div class="feat-overlay">
+							<div class="feat-text">
+								<h3><a href="{{ data.posts[0].url }}">{{ data.posts[0].title }}</a>
+								</h3>
+							</div>
+						</div>
+					</div>
+					{% for n in range(1, 3) %}
+					<div class="item ">
+						<a href="{{ data.posts[n].url }}">
+							<div class="image-overlay" style="background-image:url({{ data.posts[n].img }})">
+							</div>
+						</a>
+						<div class="feat-overlay">
+							<div class="feat-text">
+								<h3><a href="{{ data.posts[n].url }}">{{ data.posts[n].title }}</a></h3>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<div class="sonia-wrap container" role="toolbar">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main">
+				<div class="first-post">
+					<article class="standard3 post-1209 post type-post status-publish format-video has-post-thumbnail hentry category-lifestyle tag-beautiful tag-beauty tag-blog tag-blogger tag-girl tag-magazine tag-personal tag-sonia tag-special tag-travel tag-video post_format-post-format-video">
+						<header class="entry-header">
+							<a class="post-thumbnail" href="{{ data.posts[3].url }}" style="background-image:url('{{ data.posts[3].img }}');"></a>
+							<h2 class="entry-title"><a href="{{ data.posts[3].url }}" rel="bookmark">{{ data.posts[3].title }}</a></h2>
+						</header><!-- .entry-header -->
+
+						<div class="entry-content entry-more-link">
+							<p>{{ data.posts[3].excerpt }}</p>
+						</div><!-- .entry-content -->
+						<footer class="entry-footer">
+							<div class="sonia-social-shared">
+								<a href="#" class="sonia-post-like" data-post_id="468" title="Like" data-like="Like" data-unlike="Unlike"><i class="fa fa-heart-o"></i></a> <a href="http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/#respond"><span class="comment-box"><i class="fa fa-comment"></i></span></a><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-facebook"></i></a><a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20What%20is%20there%20to%20see%20in%20Miami%20-%20http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-twitter"></i></a><a target="_blank" href="https://pinterest.com/pin/create/button/?url=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/&amp;media=http://sonia.neptunetheme.com/wp-content/uploads/2017/03/vintage-1950s-887272_1920.jpg&amp;description=What%20is%20there%20to%20see%20in%20Miami"><i class="fa fa-pinterest"></i></a> </div>
+						</footer><!-- .entry-footer -->
+						<p class="wrap-more-link"><a class="more-link" href="http://sonia.neptunetheme.com/2017/09/18/4-day-hiking-in-the-brandenberg-alps-tyrol-austria/">Read More</a></p>
+					</article><!-- #post-## -->
+				</div>
+				{% for n in range(4,8) %}
+				<article class="grid3 post-1206 post type-post status-publish format-gallery has-post-thumbnail hentry category-lifestyle tag-beautiful tag-beauty tag-blog tag-blogger tag-girl tag-magazine tag-personal tag-sonia tag-special tag-travel tag-video post_format-post-format-gallery">
+					<header class="entry-header">
+						<a class="post-thumbnail" href="{{ data.posts[n].url }}" aria-hidden="true" style="background-image:url('{{ data.posts[n].img }}');"></a>
+						<h2 class="entry-title"><a href="{{ data.posts[n].url }}" rel="bookmark">{{ data.posts[n].title }}</a></h2>
+					</header><!-- .entry-header -->
+					<div class="entry-content">
+						{{ data.posts[n].excerpt }}
+					</div><!-- .entry-content -->
+					<footer class="entry-footer">
+						<div class="sonia-social-shared">
+							<a href="#" class="sonia-post-like" data-post_id="468" title="Like" data-like="Like" data-unlike="Unlike"><i class="fa fa-heart-o"></i></a> <a href="http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/#respond"><span class="comment-box"><i class="fa fa-comment"></i></span></a><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-facebook"></i></a><a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20What%20is%20there%20to%20see%20in%20Miami%20-%20http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-twitter"></i></a><a target="_blank" href="https://pinterest.com/pin/create/button/?url=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/&amp;media=http://sonia.neptunetheme.com/wp-content/uploads/2017/03/vintage-1950s-887272_1920.jpg&amp;description=What%20is%20there%20to%20see%20in%20Miami"><i class="fa fa-pinterest"></i></a> </div>
+					</footer><!-- .entry-footer -->
+				</article><!-- #post-## -->
+				{% endfor %}
+				
+				<div class="first-post">
+					<article class="standard3 post-1209 post type-post status-publish format-video has-post-thumbnail hentry category-lifestyle tag-beautiful tag-beauty tag-blog tag-blogger tag-girl tag-magazine tag-personal tag-sonia tag-special tag-travel tag-video post_format-post-format-video">
+						<header class="entry-header">
+							<a class="post-thumbnail" href="{{ data.posts[9].url }}" style="background-image:url('{{ data.posts[9].img }}');"></a>
+							<h2 class="entry-title"><a href="{{ data.posts[9].url }}" rel="bookmark">{{ data.posts[9].title }}</a></h2>
+						</header><!-- .entry-header -->
+
+						<div class="entry-content entry-more-link">
+							<p>{{ data.posts[9].excerpt }}</p>
+						</div><!-- .entry-content -->
+						<footer class="entry-footer">
+							<div class="sonia-social-shared">
+								<a href="#" class="sonia-post-like" data-post_id="468" title="Like" data-like="Like" data-unlike="Unlike"><i class="fa fa-heart-o"></i></a> <a href="http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/#respond"><span class="comment-box"><i class="fa fa-comment"></i></span></a><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-facebook"></i></a><a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20What%20is%20there%20to%20see%20in%20Miami%20-%20http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-twitter"></i></a><a target="_blank" href="https://pinterest.com/pin/create/button/?url=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/&amp;media=http://sonia.neptunetheme.com/wp-content/uploads/2017/03/vintage-1950s-887272_1920.jpg&amp;description=What%20is%20there%20to%20see%20in%20Miami"><i class="fa fa-pinterest"></i></a> </div>
+						</footer><!-- .entry-footer -->
+						<p class="wrap-more-link"><a class="more-link" href="http://sonia.neptunetheme.com/2017/09/18/4-day-hiking-in-the-brandenberg-alps-tyrol-austria/">Read More</a></p>
+					</article><!-- #post-## -->
+				</div>
+				{% for n in range(10,14) %}
+				<article class="grid3 post-1206 post type-post status-publish format-gallery has-post-thumbnail hentry category-lifestyle tag-beautiful tag-beauty tag-blog tag-blogger tag-girl tag-magazine tag-personal tag-sonia tag-special tag-travel tag-video post_format-post-format-gallery">
+					<header class="entry-header">
+						<a class="post-thumbnail" href="{{ data.posts[n].url }}" aria-hidden="true" style="background-image:url('{{ data.posts[n].img }}');"></a>
+						<h2 class="entry-title"><a href="{{ data.posts[n].url }}" rel="bookmark">{{ data.posts[n].title }}</a></h2>
+					</header><!-- .entry-header -->
+					<div class="entry-content">
+						{{ data.posts[n].excerpt }}
+					</div><!-- .entry-content -->
+					<footer class="entry-footer">
+						<div class="sonia-social-shared">
+							<a href="#" class="sonia-post-like" data-post_id="468" title="Like" data-like="Like" data-unlike="Unlike"><i class="fa fa-heart-o"></i></a> <a href="http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/#respond"><span class="comment-box"><i class="fa fa-comment"></i></span></a><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-facebook"></i></a><a target="_blank" href="https://twitter.com/home?status=Check%20out%20this%20article:%20What%20is%20there%20to%20see%20in%20Miami%20-%20http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/"><i class="fa fa-twitter"></i></a><a target="_blank" href="https://pinterest.com/pin/create/button/?url=http://sonia.neptunetheme.com/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/&amp;media=http://sonia.neptunetheme.com/wp-content/uploads/2017/03/vintage-1950s-887272_1920.jpg&amp;description=What%20is%20there%20to%20see%20in%20Miami"><i class="fa fa-pinterest"></i></a> </div>
+					</footer><!-- .entry-footer -->
+				</article><!-- #post-## -->
+				{% endfor %}
+
+				
+				<nav class="navigation posts-navigation">
+					<h2 class="screen-reader-text">Posts navigation</h2>
+					<div class="nav-links">
+						<div class="nav-previous"><a href="http://sonia.neptunetheme.com/page/2/"><i class="fa fa-chevron-left"></i> older posts</a></div>
+					</div>
+				</nav>
+			</main><!-- #main -->
+		</div><!-- #primary -->
+
+
+		<aside id="secondary" class="widget-area ">
+			<section id="categories-3" class="widget widget_categories">
+				<h4 class="widget-title"><span>Categories</span></h4>
+				<ul>
+					<li class="cat-item cat-item-3"><a href="http://sonia.neptunetheme.com/category/featured/">Featured
+							<span>(3)</span></a>
+					</li>
+					<li class="cat-item cat-item-4"><a href="http://sonia.neptunetheme.com/category/lifestyle/" title="Life is a story, make yours the best seller.">Lifestyle <span>(13)</span></a>
+					</li>
+					<li class="cat-item cat-item-5"><a href="http://sonia.neptunetheme.com/category/memories/">Memories
+							<span>(2)</span></a>
+					</li>
+					<li class="cat-item cat-item-6"><a href="http://sonia.neptunetheme.com/category/music/">Music
+							<span>(2)</span></a>
+					</li>
+					<li class="cat-item cat-item-7"><a href="http://sonia.neptunetheme.com/category/travel/">Travel
+							<span>(4)</span></a>
+					</li>
+				</ul>
+			</section>
+		</aside><!-- #secondary -->
+	</div>
+</div>
+{% endblock %}

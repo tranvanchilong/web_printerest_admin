@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+	<main class="content" id="genesis-content">
+		<div class="widget-area home-top">
+			<section id="featured-post-3" class="widget featured-content featuredpost">
+				<div class="widget-wrap">
+					<article class="post-354 post type-post status-publish format-standard has-post-thumbnail category-breakfast category-lunch category-supper entry">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="{{ data.posts[0].url }}">{{ data.posts[0].title }}</a></h2>
+						</header>
+						<div class="entry-content">
+							{% if data.posts[0].img %}
+							<p><center><img src="{{ data.posts[0].img }}" alt="" width="1155" height="1732"></center></p>
+							{% endif %}
+							<p>{{ data.posts[0].excerpt }}</p>
+							<p><a class="more-link" href="{{ data.posts[0].url }}">Read More</a></p>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+		<div class="widget-area home-middle">
+			<section id="enews-ext-4" class="widget enews-widget">
+				<div class="widget-wrap">
+					<div class="enews">
+						<!-- Ads -->
+					</div>
+				</div>
+			</section>
+		</div>
+		<div class="widget-area home-bottom">
+			<section id="featured-post-2" class="widget featured-content featuredpost">
+				<div class="widget-wrap">
+					<h3 class="widgettitle widget-title">One Half Display</h3>
+					{% for n in range(1, 3) %}
+					{% if loop.index == 1 %}
+					<article class="simple-grid one-half odd first post-353 post type-post status-publish format-standard has-post-thumbnail category-breakfast category-lunch category-supper entry">
+					{% else %}
+					<article class="simple-grid one-half post-352 post type-post status-publish format-standard has-post-thumbnail category-baking category-breakfast category-gluten-free category-lunch category-paleo category-supper category-uncategorized category-vegan category-vegetarian entry">
+					{% endif %}
+						<a href="{{ data.posts[n].url }}" title="{{ data.posts[n].title }}" class="aligncenter">
+							{% if data.posts[n].img %}
+							<p><img width="340" height="450" src="{{ data.posts[n].img }}" alt="" width="1155" height="1732"></p>
+							{% endif %}
+						</a>
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="{{ data.posts[n].url }}">{{ data.posts[n].title }}</a></h2>
+						</header>
+						<div class="entry-content">
+							<p>{{ data.posts[n].excerpt }}</p>
+							<p><a class="more-link" href="{{ data.posts[n].url }}">Read More</a></p>
+						</div>
+					</article>
+					{% endfor %}
+				</div>
+			</section>
+			<section id="featured-post-4" class="widget featured-content featuredpost">
+				<div class="widget-wrap">
+					<h3 class="widgettitle widget-title">One Third Grid</h3>
+					{% for n in range(3, 6) %}
+					{% if loop.index == 1 %}
+					<article class="simple-grid one-third odd first post-351 post type-post status-publish format-standard has-post-thumbnail category-baking category-breakfast category-gluten-free category-lunch category-paleo category-supper category-uncategorized category-vegan category-vegetarian entry">
+					{% else %}
+					<article class="simple-grid one-third post-11 post type-post status-publish format-standard has-post-thumbnail category-baking category-breakfast category-gluten-free category-lunch category-paleo category-supper category-uncategorized category-vegan category-vegetarian tag-unordered-lists entry">
+					{% endif %}
+						<a href="{{ data.posts[n].url }}" title="{{ data.posts[n].title }}" class="aligncenter">
+						{% if data.posts[n].img %}
+						<img width="340" height="450" src="{{ data.posts[n].img }}" class="entry-image attachment-post" alt="">
+						{% endif %}
+						</a>
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="{{ data.posts[n].url }}">{{ data.posts[n].title }}</a></h2>
+						</header>
+					</article>
+					{% endfor %}
+					<p class="more-from-category"><a href="https://foodiepro.com/category/breakfast/" title="Breakfast">See More →</a></p>
+				</div>
+			</section>
+			<section id="featured-post-5" class="widget featured-content featuredpost">
+				<div class="widget-wrap">
+					<h3 class="widgettitle widget-title">One Fourth Grid</h3>
+					{% for n in range(6, 10) %}
+					{% if loop.index == 1 %}
+					<article class="simple-grid one-fourth odd first post-354 post type-post status-publish format-standard has-post-thumbnail category-breakfast category-lunch category-supper entry">
+					{% else %}
+					<article class="simple-grid one-fourth post-353 post type-post status-publish format-standard has-post-thumbnail category-breakfast category-lunch category-supper entry">
+					{% endif %}
+						<a href="{{ data.posts[n].url }}" title="{{ data.posts[n].title }}" class="aligncenter">
+						{% if data.posts[n].img %}
+						<img width="340" height="450" src="{{ data.posts[n].img }}" class="entry-image attachment-post" alt="">
+						{% endif %}
+						</a>
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="{{ data.posts[n].url }}">{{ data.posts[n].title }}</a></h2>
+						</header>
+					</article>
+					{% endfor %}
+				</div>
+			</section>
+		</div>
+		<!-- end .home-bottom -->
+	</main>
+{% endblock %}

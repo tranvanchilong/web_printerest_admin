@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+<div id="primary" class="content-area">
+	<div class="primary-inner">
+		<div id="content" class="site-content" role="main">
+			<article>
+				<header class="entry-header">
+					<h1 class="entry-title">{{ data.title }}</h1>
+				</header>
+				<div class="entry-content">
+					{{ data.content }}
+				</div>
+				<footer class="entry-footer">
+					<div class="entry-tags">
+						<span class="tags-title">Tags</span>
+						<span class="tags-links"></span>
+					</div>
+				</footer>
+			</article>
+			<div class="related-posts">
+				<h2 class="related-posts-title">Related Articles</h2>
+				<div class="related-content">
+					{% for result in data.sidebars %}
+					<article class="related-post clearfix">
+						<h3 class="related-title"><a href="{{ result.url }}">{{ result.title }}</a></h3>
+					</article>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

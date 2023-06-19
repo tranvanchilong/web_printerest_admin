@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>{{ data.meta_title }}</title>
+    <meta name="description" content="{{ data.meta_description }}">
+    <meta name="robots" content="{{ data.meta_robots }}">
+{% endblock %}
+{% block content %}
+<main class="content" id="genesis-content">
+    <div class="home-bottom widget-area">
+        <header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">{{ data.meta_title }}</h1>
+			<p>{{ data.meta_description }}</p>
+		</header>
+		<section class="widget featured-content featuredpost">
+			<div class="widget-wrap">
+				<article class="post type-post status-publish format-standard has-post-thumbnail category-lifestyle tag-colorado tag-skiing entry">
+					<form class="search-form" method="get" action="/search/" role="search" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction">
+                        <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Search the site ..." itemprop="query-input" style="background-color:aliceblue; text-emphasis-color: red;">
+                    </form>
+				</article>
+			</div>
+		</section>
+	</div>
+</main>
+{% endblock %}

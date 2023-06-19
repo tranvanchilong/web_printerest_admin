@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    image: registry.gitlab.com/q347/starlette_down_pinterest:v0.2
+    container_name: none_backend
+    # command: python app.py
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    # command: uvicorn app:app --host 0.0.0.0 --port 8000
+    ports:
+      - "5002:8000"
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"

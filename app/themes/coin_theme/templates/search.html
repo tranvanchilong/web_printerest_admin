@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+{% endblock %}
+{% block content %}
+<main class="content" id="genesis-content">
+	<div class="home-bottom widget-area">
+		<section id="featured-post-6" class="widget featured-content featuredpost">
+			<div class="widget-wrap">
+                {% if data.posts|length  == 0 %}
+                {{ data.meta_description }} <br><br>
+                    <form class="search-form" method="get" action="/search/" role="search" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction">
+                        <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Search the site ..." itemprop="query-input" style="background-color:aliceblue; text-emphasis-color: red;">
+                    </form>
+                {% endif %}
+				{% for result in data.posts %}
+				<article class="post type-post status-publish format-standard has-post-thumbnail category-lifestyle tag-colorado tag-skiing entry">
+					<header class="entry-header">
+						<h4 class="entry-title" itemprop="headline"><a href="{{ result.slug }}">{{ result.name}}</a></h4>
+					</header>
+				</article>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+</main>
+{% endblock %}

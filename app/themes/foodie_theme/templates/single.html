@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+	<main class="content" id="genesis-content">
+		<article class="content-354 content type-content status-publish format-standard has-content-thumbnail category-breakfast category-lunch category-supper entry" itemscope="" itemtype="https://schema.org/CreativeWork">
+			<header class="entry-header">
+				<h1 class="entry-title" itemprop="headline">{{ data.title }}</h1>
+			</header>
+			<div class="entry-content" itemprop="text">
+				{{ data.content }}
+			</div>
+			<footer class="entry-footer">
+				<p class="entry-meta"><span class="entry-categories">Filed Under: </span> </p>
+			</footer>
+		</article>
+	</main>
+{% endblock %}

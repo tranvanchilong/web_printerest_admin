@@ -1,0 +1,135 @@
+<!-- {%for post in posts%} {{post.type}} {%endfor%} -->
+<!-- {{posts}} -->
+
+{% extends "base.html" %} {% block content%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+/>
+<div class="container-xxl flex-grow-1 container-p-y">
+  <!-- Daily stats -->
+  {% if j2_group_perm('admin,stats', user_data) %}
+  <div class="row">
+    <!-- Basic -->
+    <div class="col-md-12 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="row row-bordered g-0">
+            <!-- <form action="" method="POST">
+              <div class="row align-items-center justify-content-center">
+                <div class="my-1 col-md-auto">
+                  <input
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="daterange"
+                    value="{{ data['d1'] }} - {{ data['d2'] }}"
+                  />
+                </div>
+
+                <div class="my-1 col-md-2">
+                  <input class="btn btn-primary w-100" type="submit" />
+                </div>
+              </div>
+            </form> -->
+            <h5 class="card-header m-0 me-2 pb-3">Edit Content</h5>
+            <form action="/admin/homepage_edit/{{name}}/create_{{lang}}" method="post" id="commentform" class="comment-form" name="1234556" novalidate=""><p class="comment-notes"></p>
+                {%for key in posts.content%}
+                    {% set name = key %}
+                   <h5 style="color: blue;"> Position:   {{key}}</h5> </br>
+                    Original context:   
+                    {{ posts.content[key].source  }}
+                        {%if ((posts.content[key].tran)|length < 120) %}
+                            <p class="comment-form-url"><p class="comment-form-comment"><label for="comment">Tran <span class="required">*</span></label> <textarea  style="height: 50px; " id="comment" name="{{key}}" value="{{posts.content[key].tran}}" cols="45" rows="8" maxlength="65525" required=""> {{posts.content[key].tran}} </textarea></p></p>
+                        {%else%}
+                            <p class="comment-form-url"><p class="comment-form-comment"><label for="comment">Tran <span class="required">*</span></label> <textarea  style="height: 200px; " id="comment" name="{{key}}" value="{{posts.content[key].tran}}" cols="45" rows="8" maxlength="65525" required=""> {{posts.content[key].tran}} </textarea></p></p>
+                        {%endif%}
+                {%endfor%}
+              <label for="cars">Trạng Thái:</label>
+  <select id="edit" name="status">
+    <option value="False">Đang chỉnh sửa</option>
+    <option value="True">Đã chỉnh sửa</option>
+  </select>
+<!-- <p class="comment-form-comment"><label for="comment">Tran <span class="required">*</span> -->
+</label> 
+<!-- <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required=""></textarea></p> -->
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Language"> 
+    <input type="hidden" name="comment_post_ID" value="240489" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="5b1da25f4f"></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1676860781529"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+
+<style>
+
+input[type=submit], button, .button, .added_to_cart, .wp-block-search .wp-block-search__button, .wp-block-file a.wp-block-file__button {
+    
+    background-color: var(--wpex-btn-bg,var(--wpex-accent));
+    color: var(--wpex-btn-color,var(--wpex-on-accent));
+    border-radius: var(--wpex-btn-border-radius);
+    border-width: var(--wpex-btn-border-width);
+    border-style: var(--wpex-btn-border-style);
+    border-color: var(--wpex-btn-border-color,currentColor);
+
+    padding: var(--wpex-btn-padding);
+
+}
+
+table{border-collapse:collapse;border-spacing:0}caption,th,td{font-weight:400;text-align:left}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}blockquote,q{quotes:none}a img{border:0}img{max-width:100%;height:auto}select{max-width:100%}:root{--wpex-white:#ffffff;--wpex-black:#000000;--wpex-gray-50:#fafafa;--wpex-gray-100:#f7f7f7;--wpex-gray-200:#eeeeee;--wpex-gray-300:#e0e0e0;--wpex-gray-400:#bdbdbd;--wpex-gray-500:#9e9e9e;--wpex-gray-600:#757575;--wpex-gray-700:#616161;--wpex-gray-800:#424242;--wpex-gray-900:#222222;--wpex-gray-A900:#262626;--wpex-blue:#4a97c2;--wpex-blue-alt:#327397;--wpex-green:#87bf17;--wpex-green-alt:#679212;--wpex-red:#f73936;--wpex-red-alt:#bf0a08;--wpex-orange:#ee7836;--wpex-orange-alt:#cf5511;--wpex-purple:#9a5e9a;--wpex-purple-alt:#653e65;--wpex-pink:#f261c2;--wpex-pink-alt:#bc0f83;--wpex-teal:#00b3b3;--wpex-teal-alt:#006f6f;--wpex-brown:#804b35;--wpex-brown-alt:#5c3626;--wpex-gold:#ffaa33;--wpex-gold-alt:#ff9500;--wpex-rosy:#ea2487;--wpex-rosy-alt:#b81265;--wpex-grey:#bdbdbd;--wpex-grey-alt:#9e9e9e;--wpex-accent:#1a73e8;--wpex-accent-alt:#1464cc;--wpex-on-accent:var(--wpex-white);--wpex-on-accent-alt:var(--wpex-white);--wpex-red-error:#dc3232;--wpex-green-success:#46b450;--wpex-yellow-warning:#ffb900;--wpex-blue-info:#00a0d2;--wpex-star-rating-color:#ffc833;--wpex-text-1:var(--wpex-gray-900);--wpex-text-2:var(--wpex-gray-700);--wpex-text-3:var(--wpex-gray-600);--wpex-text-4:var(--wpex-gray-500);--wpex-surface-1:var(--wpex-white);--wpex-surface-2:var(--wpex-gray-100);--wpex-surface-3:var(--wpex-gray-200);--wpex-surface-4:var(--wpex-gray-300);--wpex-alert-bg:var(--wpex-surface-3);--wpex-alert-color:#32373c;--wpex-info-bg:#e5f5fa;--wpex-success-bg:#ecf7ed;--wpex-warning-bg:#fff8e5;--wpex-error-bg:#fbeaea;--wpex-bg-color:var(--wpex-surface-1);--wpex-border-main:var(--wpex-surface-3);--wpex-heading-color:var(--wpex-text-1);--wpex-input-color:var(--wpex-text-2);--wpex-input-bg:var(--wpex-surface-1);--wpex-input-border-color:var(--wpex-surface-4);--wpex-focus-input-color:var(--wpex-input-color);--wpex-focus-input-bg:var(--wpex-input-bg);--wpex-focus-input-border-color:var(--wpex-input-border-color);--wpex-table-thead-bg:var(--wpex-surface-2);--wpex-table-thead-color:var(--wpex-text-1);--wpex-table-th-color:var(--wpex-text-1);--wpex-table-cell-border-color:var(--wpex-border-main);--wpex-brands-facebook:#1877F2;--wpex-brands-twitter:#1DA1F2;--wpex-brands-pinterest:#BD081C;--wpex-brands-linkedin:#0A66C2;--wpex-text-xs:.846em;--wpex-text-sm:.923em;--wpex-text-base:1em;--wpex-text-md:1.077em;--wpex-text-lg:1.231em;--wpex-text-xl:1.385em;--wpex-text-2xl:1.615em;--wpex-text-3xl:1.846em;--wpex-text-4xl:2.154em;--wpex-text-5xl:2.462em;--wpex-text-6xl:2.769em;--wpex-text-7xl:3.231em;--wpex-rounded-xs:3px;--wpex-rounded-sm:5px;--wpex-rounded:10px;--wpex-rounded-md:15px;--wpex-rounded-lg:20px;--wpex-rounded-full:9999px;--wpex-leading-tight:1.25;--wpex-leading-snug:1.375;--wpex-leading-normal:1.5;--wpex-leading-relaxed:1.625;--wpex-leading-loose:2;--wpex-tracking-tighter:-0.05em;--wpex-tracking-tight:-0.025em;--wpex-tracking-normal:0;--wpex-tracking-wide:0.025em;--wpex-tracking-wider:0.05em;--wpex-tracking-widest:0.1em;--wpex-radius-blob-1:30% 70% 70% 30% / 53% 30% 70% 47%;--wpex-radius-blob-2:53% 47% 34% 66% / 63% 46% 54% 37%;--wpex-radius-blob-3:37% 63% 56% 44% / 49% 56% 44% 51%;--wpex-radius-blob-4:63% 37% 37% 63% / 43% 37% 63% 57%;--wpex-radius-blob-5:49% 51% 48% 52% / 57% 44% 56% 43%;--wpex-shadow-xs:0 0 0 1px rgba(0,0,0,0.05);--wpex-shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);--wpex-shadow:0 1px 3px 0 rgba(0,0,0,0.1),0 1px 2px 0 rgba(0,0,0,0.06);--wpex-shadow-md:0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);--wpex-shadow-lg:0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);--wpex-shadow-xl:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);--wpex-shadow-2xl:0 25px 50px -12px rgba(0,0,0,0.25);--wpex-shadow-inner:inset 0 2px 4px 0 rgba(0,0,0,0.06);--wpex-focus-shadow-outline:0 0 0 3px rgba(66,153,225,0.5);--wpex-row-gap:20px;--wpex-font-sans:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";--wpex-font-serif:Georgia, Cambria, "Times New Roman", Times, serif;--wpex-font-mono:Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;--wpex-el-margin-bottom:20px;--wpex-bold:600;--wpex-link-text-decoration:none;--wpex-hover-link-text-decoration:underline;--wpex-btn-font-size:1em;--wpex-btn-border-radius:var(--wpex-rounded-xs);--wpex-btn-font-weight:400;--wpex-btn-padding:.538em 1.077em;--wpex-btn-line-height:var(--wpex-body-line-height, 1.65);--wpex-btn-letter-spacing:inherit;--wpex-btn-text-transform:inherit;--wpex-btn-font-family:inherit;--wpex-btn-font-style:inherit;--wpex-btn-border-width:0;--wpex-btn-border-style:none;--wpex-heading-line-height:var(--wpex-leading-snug);--wpex-heading-font-weight:var(--wpex-bold);--wpex-container-width:980px;--wpex-container-max-width:90%;--wpex-content-area-width:69%;--wpex-primary-sidebar-width:26%;--wpex-boxed-layout-gutter:30px;--wpex-input-font-size:1em;--wpex-input-line-height:var(--wpex-leading-relaxed);--wpex-input-border-radius:var(--wpex-rounded-xs);--wpex-input-padding:6px 10px;--wpex-input-border-width:1px;--wpex-input-border-style:solid;--wpadminbar-height:32px}@media screen and (max-width:782px)
+{}
+button,input,select,textarea{font-size:100%;line-height:inherit;margin:0;vertical-align:baseline}input[type=date],input[type=time],input[type=datetime-local],input[type=week],input[type=month],input[type=text],input[type=email],input[type=url],input[type=password],input[type=search],input[type=tel],input[type=number],textarea{display:inline-block;font-family:inherit;font-weight:inherit;text-align:inherit;max-width:100%;font-size:var(--wpex-input-font-size);line-height:var(--wpex-input-line-height);transition:var(--wpex-input-transition);padding:var(--wpex-input-padding);border-radius:var(--wpex-input-border-radius);color:var(--wpex-input-color);background:var(--wpex-input-bg);box-shadow:var(--wpex-input-box-shadow,none);border:var(--wpex-input-border-width) var(--wpex-input-border-style) var(--wpex-input-border-color);-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type=date]:focus,input[type=time]:focus,input[type=datetime-local]:focus,input[type=week]:focus,input[type=month]:focus,input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,input[type=password]:focus,input[type=search]:focus,input[type=tel]:focus,input[type=number]:focus,textarea:focus{outline:var(--wpex-focus-input-outline-width) solid var(--wpex-focus-input-outline-color);outline-offset:var(--wpex-focus-input-outline-offset);color:var(--wpex-focus-input-color);background:var(--wpex-focus-input-bg);border-color:var(--wpex-focus-input-border-color);box-shadow:var(--wpex-focus-input-box-shadow,none)}input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration{display:none}textarea{width:100%;max-width:100%}select{color:inherit;background-color:var(--wpex-input-bg);border:1px solid var(--wpex-input-border-color);outline:0}input[type=checkbox],input[type=radio]{margin-right:5px}input:-webkit-autofill,input:autofill{filter:none}::-webkit-input-placeholder{color:inherit;opacity:.7}:-moz-placeholder{color:inherit;opacity:.7}::-moz-placeholder{color:inherit;opacity:.7}:-ms-input-placeholder{color:inherit;opacity:.7}.password-protection-box input{height:40px;padding-top:0;padding-bottom:0}.password-protection-box input[type=password]{background:var(--wpex-white)}.password-protection-box input[type=submit]{height:40px;line-height:40px;padding:0 25px}body .select2-container--default .select2-selection--single,body .select2-container--default .select2-search--dropdown .select2-search__field,body .select2-dropdown{background-color:var(--wpex-input-bg);border-color:var(--wpex-input-border-color)}body .select2-container--default .select2-selection--single .select2-selection__rendered{color:var(--wpex-input-color);line-height:35px}body .select2-container .select2-selection--single,body .select2-container--default .select2-selection--single .select2-selection__arrow{height:35px}.select2-container--default .select2-results__option--highlighted[aria-selected],.select2-container--default .select2-results__option--highlighted[data-selected]{background-color:var(--wpex-accent)}@supports(-webkit-overflow-scrolling:touch){input[type=color],input[type=date],input[type=datetime],input[type=datetime-local],input[type=email],input[type=month],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text],input[type=time],input[type=url],input[type=week],select,textarea{font-size:16px}}.light-form{--wpex-input-color:#555;--wpex-focus-input-color:#555;--wpex-input-bg:var(--wpex-white);--wpex-focus-input-bg:var(--wpex-white)
+}</style>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Basic -->
+  </div>
+  {% endif %}
+</div>
+<!-- / Content -->
+<script>
+  $('input[name="daterange"]').daterangepicker(
+    {
+      // opens: 'left',
+      alwaysShowCalendars: true,
+      autoApply: true,
+      locale: {
+        format: "YYYY/MM/DD",
+      },
+      ranges: {
+        Today: [moment(), moment()],
+        Yesterday: [moment().subtract(1, "days"), moment().subtract(1, "days")],
+        "Last 7 Days": [moment().subtract(6, "days"), moment()],
+        "Last 30 Days": [moment().subtract(29, "days"), moment()],
+        "This Month": [moment().startOf("month"), moment().endOf("month")],
+        "Last Month": [
+          moment().subtract(1, "month").startOf("month"),
+          moment().subtract(1, "month").endOf("month"),
+        ],
+      },
+    },
+    function (start, end, label) {
+      console.log(
+        "A new date selection was made: " +
+          start.format("YYYY-MM-DD") +
+          " to " +
+          end.format("YYYY-MM-DD")
+      );
+    }
+  );
+</script>
+{% endblock %}

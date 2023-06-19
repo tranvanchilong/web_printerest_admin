@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% block head %}{% endblock %}
+    <link rel="dns-prefetch" href="https://s.w.org/">
+    <link rel="preload" as="font" href="/static/gf.css">
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="{{ url_for('static',path='style.css') }}">
+    <noscript>
+        <link rel="stylesheet" href="{{ url_for('static',path='style.css') }}" type="text/css" media="all">
+    </noscript>
+    <link rel="icon" href="{{ url_for('static',path='favicon.ico') }}">
+</head>
+
+<body class="post-template-default single single-post postid-586 single-format-standard custom-header content-sidebar primary-nav js" itemscope="" itemtype="https://schema.org/WebPage">
+    <div class="site-container">
+        <header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader">
+            <div class="wrap">
+                <div class="title-area">
+                    <p class="site-title" itemprop="headline"><a href="/">Log me in</a></p>
+                </div>
+                <form class="search-form" method="get" action="/search/" role="search" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction">
+                    <input class="search-form-input" type="search" name="s" id="searchform-1" placeholder="Search the site ..." itemprop="query-input" style="background-color:aliceblue; text-emphasis-color: red;">
+                </form>
+            </div>
+        </header>
+        <div class="site-inner">
+            <div class="content-sidebar-wrap"> {% block content %}{% endblock %} <aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="" itemtype="https://schema.org/WPSideBar" id="genesis-sidebar-primary">
+                    <section class="widget featured-content featuredpost">
+                        <div class="widget-wrap">
+                            <h3 class="widgettitle widget-title">Recnet Added</h3> {% for result in data.recent_posts %} <article class="post type-post status-publish format-standard has-post-thumbnail category-fashion tag-nordstrom tag-womens-fashion entry">
+                                <header class="entry-header">
+                                    <h4 class="entry-title" itemprop="headline">
+                                        <a href="{{ result.slug }}">{{ result.name }} Login</a>
+                                    </h4>
+                                </header>
+                            </article> {% endfor %}
+                        </div>
+                    </section>
+                    <section id="tag_cloud-3" class="widget widget_tag_cloud">
+                        <div class="widget-wrap">
+                            <h3 class="widgettitle widget-title">Trending</h3>
+                            <div class="tagcloud"> {% for result in data.random_posts %} <a href="{{ result.slug }}" class="tag-cloud-link ">{{ result.name }} Login</a> {% endfor %} </div>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+        <footer class="site-footer" itemscope="" itemtype="https://schema.org/WPFooter">
+            <div class="wrap">
+                <p>Copyright ©&nbsp;2022 · <a href="/" itemprop="url" class="sf-with-ul">Loginqb.com</a></p>
+                <ul id="menu-secondary-navigation" class="menu genesis-nav-menu menu-primary js-superfish sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    <li id="menu-item-455" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-455">
+                        <a href="/" itemprop="url" class="sf-with-ul"><span itemprop="name">Home</span></a>
+                    </li>
+                    <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20">
+                        <a href="/about" itemprop="url" class="sf-with-ul" rel="nofollow"><span itemprop="name">About us</span></a>
+                    </li>
+                    <li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21">
+                        <a href="/contact" itemprop="url" class="sf-with-ul" rel="nofollow"><span itemprop="name">Contact</span></a>
+                    </li>
+                    <li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21">
+                        <a href="/contact" itemprop="url" class="sf-with-ul" rel="nofollow"><span itemprop="name">Remove link</span></a>
+                    </li>
+                    <li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21">
+                        <a href="/privacy-policy" itemprop="url" class="sf-with-ul" rel="nofollow"><span itemprop="name">Privacy Policy</span></a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

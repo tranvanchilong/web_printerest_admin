@@ -1,0 +1,50 @@
+.home-layout {
+	position: fixed;
+	top: 10%;
+	left: 0;
+	z-index: 9999;
+	border: 1px solid #eee;
+	padding: 20px 0;
+	background-color: #fff;
+	transform: translateX(-100%);
+	transition: transform .5s;
+	cursor: pointer;
+	text-align: center;
+	width: 200px;
+}
+.home-layout.open{
+	transform: translateX(0);
+}
+.home-layout h1 {
+	text-transform: uppercase;
+	word-spacing: 2px;
+	font-size: 18px;
+}
+.item-layout {
+	border: 1px solid #fff;
+	text-transform: uppercase;
+	padding: 0;
+	margin-bottom: 5px;
+}
+.item-layout a {
+	background-color: #eee;
+	display: inline-block;
+	width: 100%;
+	padding: 10px 0;
+}
+
+.item-layout:hover a {
+	color: #000;
+	background-color: #b1eef5;
+}
+.icon-config {
+    position: absolute;
+    top: 50%;
+    right: -42px;
+    background: #fff;
+    border: 1px solid #eee;
+    font-size: 25px;
+    padding: 0px 10px;
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+}

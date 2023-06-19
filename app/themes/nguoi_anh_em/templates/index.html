@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+<div id="primary" class="content-area">
+	<div class="primary-inner">
+		<div id="content" class="site-content content-list" role="main">
+			{% for result in data.posts %}
+			<article class="hentry">
+				<header class="entry-header">
+					<h2 class="entry-title"><a href="{{ result.url }}">{{ result.title}}</a></h2>
+				</header>
+				<div class="entry-content">
+					{{ result.excerpt }}
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}

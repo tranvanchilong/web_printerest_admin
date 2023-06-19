@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block head %}{% endblock %}
+	
+	<link rel="icon" href="{{ url_for('static',path='favicon.ico') }}">
+	<style type="text/css">
+			img.wp-smiley,
+			img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 .07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+			}
+
+	</style>
+	<link rel="stylesheet" id="foodie-pro-theme-css" href="{{ url_for('static',path='style.css') }}" type="text/css" media="all">
+	<style id="foodie-pro-theme-inline-css" type="text/css">
+			.genesis-nav-menu, .genesis-nav-menu .sub-menu, .entry-footer .entry-meta, .post-meta, li.comment{border-color:#eeeeee;}body, .site-description, .sidebar .featured-content .entry-title{font-family:"Muli","Helvetica Neue",sans-serif;font-size:13px;}.genesis-nav-menu{font-family:"Karla","Helvetica Neue",sans-serif;}h1, h2, h3, h4, h5, h6, .site-title, .entry-title, .widgettitle{font-family:"Karla","Helvetica Neue",sans-serif;}.entry-title{font-family:"Karla","Helvetica Neue",sans-serif;}.button, .button-secondary, button, input[type="button"], input[type="reset"], input[type="submit"], a.more-link, .more-from-category a{font-family:"Karla","Helvetica Neue",sans-serif;}
+
+	</style>
+	<link rel='stylesheet' id='google-fonts-css' href='//fonts.googleapis.com/css?family=Muli%3Aregular%2Citalic%2C300%2C300italic%7CKarla%3Aregular%2Citalic%2C700%2C700italic%26subset%3Dlatin%2C&#038;ver=3.1.1' type='text/css' media='all'/>
+	<meta name="generator" content="WordPress 4.9.4">
+	<style type="text/css"> .enews .screenread {
+			height: 1px;
+			left: -1000em;
+			overflow: hidden;
+			position: absolute;
+			top: -1000em;
+			width: 1px; }
+
+	</style>
+	<style type="text/css">.site-title a { background: url('{{ url_for('static',path='foodielogo-1.png')}}') no-repeat !important; }</style>
+	<style type="text/css" media="screen">
+		 .simple-social-icons ul li a, .simple-social-icons ul li a:hover, .simple-social-icons ul li a:focus { background-color: #ffffff !important; border-radius: 0px; color: #aaaaaa !important; border: 0px #ffffff solid !important; font-size: 14px; padding: 7px; }  .simple-social-icons ul li a:hover, .simple-social-icons ul li a:focus { background-color: #ffffff !important; border-color: #ffffff !important; color: #101010 !important; }  .simple-social-icons ul li a:focus { outline: 1px dotted #ffffff !important; }
+	</style>
+	<style type="text/css">:root [class][data-sitename][data-header-version] > div[id^="detection-block"] { display: none !important; }</style>
+	<style type="text/css">@font-face{font-family:rbicon;src:url(chrome-extension://dipiagiiohfljcicegpgffpbnjmgjcnf/fonts/rbicon.woff2) format("woff2");font-weight:400;font-style:normal}</style>
+</head>
+<body class="home blog wp-featherlight-captions custom-header header-image header-full-width content-sidebar foodie-pro" itemscope="" itemtype="https://schema.org/WebPage" style="">
+<!-- end .before-header -->
+<div class="site-container">
+	<header class="site-header" itemscope="" itemtype="https://schema.org/WPHeader">
+		<div class="wrap">
+			<div class="title-area">
+				<h1 class="site-title" itemprop="headline"><a href="/">Foodie Pro</a></h1>
+				<p class="site-description" itemprop="description">Premium Wordpress Theme</p>
+			</div>
+		</div>
+	</header>
+	<h2 class="screen-reader-text">Main navigation</h2>
+	<div class="menu-toggle"><span></span></div>
+	<nav class="nav-primary" itemscope="" itemtype="https://schema.org/SiteNavigationElement" id="genesis-nav-primary" aria-label="Main navigation">
+		<div class="wrap">
+			<ul id="menu-primary-navigation" class="menu genesis-nav-menu menu-primary">
+				<li id="menu-item-536" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-536"><a href="/" itemprop="url"><span itemprop="name">Home</span></a></li>
+				<li id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589"><a href="#" itemprop="url"><span itemprop="name">FAQ</span></a></li>
+				<li id="menu-item-537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-537">
+					<a href="#" itemprop="url"><span itemprop="name">Layouts</span></a>
+					<div class="sub-menu-toggle"></div>
+					<ul class="sub-menu">
+						<li id="menu-item-539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-539"><a href="#" itemprop="url"><span itemprop="name">Content/Sidebar</span></a></li>
+						<li id="menu-item-540" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-540"><a href="#" itemprop="url"><span itemprop="name">Sidebar/Content</span></a></li>
+					</ul>
+				</li>
+				<li id="menu-item-553" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-553"><a href="#" itemprop="url"><span itemprop="name">Recipes</span></a></li>
+				<li id="menu-item-664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-664"><a href="#" itemprop="url"><span itemprop="name">Shop</span></a></li>
+				<li id="menu-item-543" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-543"><a href="#" itemprop="url"><span itemprop="name">Contact</span></a></li>
+				<li id="foodie-search" class="foodie-search menu-item">
+					<form class="search-form" itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction" method="get" action="/" role="search">
+						<meta itemprop="target" content="/s/{s}/">
+						<label class="search-form-label screen-reader-text" for="searchform-5a8b0b723943f8.57619956">Search</label>
+						<input itemprop="query-input" type="search" name="s" id="searchform-5a8b0b723943f8.57619956" placeholder="Search">
+						<input type="submit" value="Search">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div class="site-inner">
+		<div class="content-sidebar-wrap">
+			{% block content %}{% endblock %}
+			<aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="" itemtype="https://schema.org/WPSideBar" id="genesis-sidebar-primary">
+				<h2 class="genesis-sidebar-title screen-reader-text">Primary Sidebar</h2>
+				<section id="featured-post-7" class="widget featured-content featuredpost">
+					<div class="widget-wrap">
+						<h3 class="widgettitle widget-title">Feature Your Favorites</h3>
+						{% for result in data.sidebars %}
+						<article class="post-9 post type-post status-publish format-standard has-post-thumbnail category-baking category-breakfast category-gluten-free category-lunch category-paleo category-supper category-uncategorized category-vegan category-vegetarian tag-ordered-lists entry">
+							<a href="{{ result.url }}" title="{{ result.title }}" class="alignleft">
+								<img width="320" height="321" src="{{ result.img }}" class="entry-image attachment-post" alt="">
+							</a>
+							<header class="entry-header">
+								<h2 class="entry-title"><a href="{{ result.url }}">{{ result.title }}</a></h2>
+							</header>
+						</article>
+						{% endfor %}
+					</div>
+				</section>
+			</aside>
+		</div>
+	</div>
+	<div class="footer-widgets" id="genesis-footer-widgets">
+		<h2 class="genesis-sidebar-title screen-reader-text">Footer</h2>
+		<div class="wrap">
+			<div class="widget-area footer-widgets-2 footer-widget-area">
+				<section id="simple-social-icons-3" class="widget simple-social-icons">
+					<div class="widget-wrap">
+						<h3 class="widgettitle widget-title">About your designer</h3>
+					</div>
+				</section>
+				<section id="user-profile-3" class="widget user-profile">
+					<div class="widget-wrap">
+						<p>Brand + web designer. I’ve built my design business out of a desire to serve, and why I feel most alive when I’m taking your business, blog, or product to places that soar.</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<footer class="site-footer" itemscope="" itemtype="https://schema.org/WPFooter">
+		<div class="wrap">
+			<p>Copyright ©&nbsp;2018 · Foodie Pro &amp; The Genesis Framework</p>
+		</div>
+	</footer>
+</div>
+<div id="rememberry__extension__root"></div>
+</body>
+</html>

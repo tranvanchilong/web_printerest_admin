@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+	<main class="content" id="genesis-content">
+		<div class="widget-area home-top">
+			<section id="featured-post-3" class="widget featured-content featuredpost">
+				<div class="widget-wrap">
+					{% for result in content.p2 %}
+					<article class="post-354 post type-post status-publish format-standard has-post-thumbnail category-breakfast category-lunch category-supper entry">
+						<header class="entry-header">
+							<h2 class="entry-title"><a href="{{ result.url }}">{{ result.title }}</a></h2>
+						</header>
+						<div class="entry-content">
+
+							<p>{{ result.excerpt }}</p>
+							<p><a class="more-link" href="{{ result.url }}">Read More</a></p>
+						</div>
+					</article>
+					{% endfor %}
+				</div>
+			</section>
+		</div>
+		<!-- end .home-bottom -->
+	</main>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %} 
+{% block content%}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- Daily stats -->
+    {% if j2_group_perm('admin,stats', user_data) %}
+    <div class="row">
+        <!-- Basic -->
+        <div class="col-md-12 mb-4">
+            <div class="card">
+            <div class="card-body">
+                <div class="row row-bordered g-0">
+                    <form action="" method="POST">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="my-1 col-md-auto">
+                                <input readonly type="text" class="form-control" name="daterange" value="{{ data['d1'] }} - {{ data['d2'] }}" />
+                            </div>
+    
+                            <div class="my-1 col-md-2">
+                                <input class="btn btn-primary w-100" type="submit"/>
+                            </div>
+                        </div>
+                    </form>
+                    <h5 class="card-header m-0 me-2 pb-3">All products</h5>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- /Basic -->
+    </div>
+    {% endif %}
+</div>
+<!-- / Content -->
+<script>
+    $('input[name="daterange"]').daterangepicker({
+    // opens: 'left',
+    alwaysShowCalendars: true,
+    autoApply: true,
+    locale: {
+        format: 'YYYY/MM/DD'
+    },
+    ranges: {
+        'Today': [moment(), moment()],
+        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+        'This Month': [moment().startOf('month'), moment().endOf('month')],
+        'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    }
+    }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+    });
+</script>
+{% endblock %}

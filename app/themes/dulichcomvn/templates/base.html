@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+
+	{% block head %}{% endblock %}
+
+	<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+	<link rel="dns-prefetch" href="http://s.w.org/">
+	<link rel="stylesheet" id="neptune-style-css" href="{{ url_for('static',path='style.css')}}" type="text/css" media="all">
+	<link rel="stylesheet" id="font-awesome-css" href="{{ url_for('static',path='font-awesome.min.css')}}" type="text/css" media="all">
+	<link rel="stylesheet" id="sonia-style-css" href="{{ url_for('static',path='style(1).css')}}" type="text/css" media="all">
+	<link rel="stylesheet" id="sonia-fonts-css" href="{{ url_for('static',path='css')}}" type="text/css" media="all">
+	<link rel="stylesheet" id="custom-style-css" href="{{ url_for('static',path='custom_script.css')}}" type="text/css" media="all">
+	<style id="custom-style-inline-css" type="text/css">
+		.custom-header {
+			background-color: #fff;
+		}
+
+		#page #menu-social-items a:before {
+			color: inherit;
+		}
+
+		.archive-background {
+			background-color: #ffffff;
+		}
+	</style>
+	<link rel="stylesheet" id="neptune-customizer-style-css" href="{{ url_for('static',path='style(2).css')}}" type="text/css" media="all">
+
+
+	<noscript>
+		<style>
+			.woocommerce-product-gallery {
+				opacity: 1 !important;
+			}
+		</style>
+	</noscript>
+	<style type="text/css">
+		.recentcomments a {
+			display: inline !important;
+			padding: 0 !important;
+			margin: 0 !important;
+		}
+	</style>
+	<style type="text/css">
+		.site-title,
+		.site-description {
+			position: absolute;
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+	</style>
+
+	<!-- This site uses the Neptune Style Element plugin v1.0 to customize fonts - https://neptunetheme.com -->
+	<style>
+
+	</style>
+	<style type="text/css" id="wp-custom-css">
+		/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+		.widget_sonia_latest_news li:before {
+			display: none;
+		}
+
+		.widget_sonia_latest_news ul li {
+			border-bottom: none;
+		}
+
+		.widget_sonia_latest_news ul li a {
+			padding-left: 0;
+		}
+
+		.standard3 .entry-title {
+			margin-bottom: 15px;
+		}
+
+		.standard3 .entry-content {
+			padding: 0 80px;
+		}
+
+
+
+		.jr-insta-thumb {
+			border-top: 3px solid #b1eef5;
+			border-bottom: 3px solid #b1eef5;
+		}
+
+		.jr-insta-thumb .thumbnails li a {
+			position: relative;
+			display: inline-block;
+			transition: .5s;
+		}
+
+		.jr-insta-thumb .thumbnails li a:before {
+			border-top: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			transform: scale(0, 1);
+			transition: 0.3s;
+		}
+
+		.jr-insta-thumb .thumbnails li a:after {
+			border-right: 1px solid #fff;
+			border-left: 1px solid #fff;
+			transform: scale(1, 0);
+			transition: 0.3s;
+		}
+
+		.jr-insta-thumb .thumbnails li a:hover {
+			opacity: .8;
+			transition: .5s;
+		}
+
+
+
+		.widget-area .jr-insta-thumb {
+			border: none;
+		}
+
+
+
+
+
+		@media (max-width: 991px) {
+			.widget-area .iscwp-main-wrp .iscwp-outer-wrap .iscwp-col-3 {
+				height: 120px !important;
+			}
+
+			.standard3 .entry-content {
+				padding: 0;
+			}
+		}
+	</style>
+	<style id="fit-vids-style">
+		.fluid-width-video-wrapper {
+			width: 100%;
+			position: relative;
+			padding: 0;
+		}
+
+		.fluid-width-video-wrapper iframe,
+		.fluid-width-video-wrapper object,
+		.fluid-width-video-wrapper embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<style type="text/css">
+		.fb_hidden {
+			position: absolute;
+			top: -10000px;
+			z-index: 10001
+		}
+
+		.fb_reposition {
+			overflow: hidden;
+			position: relative
+		}
+
+		.fb_invisible {
+			display: none
+		}
+
+		.fb_reset {
+			background: none;
+			border: 0;
+			border-spacing: 0;
+			color: #000;
+			cursor: auto;
+			direction: ltr;
+			font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+			font-size: 11px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: normal;
+			letter-spacing: normal;
+			line-height: 1;
+			margin: 0;
+			overflow: visible;
+			padding: 0;
+			text-align: left;
+			text-decoration: none;
+			text-indent: 0;
+			text-shadow: none;
+			text-transform: none;
+			visibility: visible;
+			white-space: normal;
+			word-spacing: normal
+		}
+
+		.fb_reset>div {
+			overflow: hidden
+		}
+
+		@keyframes fb_transform {
+			from {
+				opacity: 0;
+				transform: scale(.95)
+			}
+
+			to {
+				opacity: 1;
+				transform: scale(1)
+			}
+		}
+
+		.fb_animate {
+			animation: fb_transform .3s forwards
+		}
+
+		.fb_dialog {
+			background: rgba(82, 82, 82, .7);
+			position: absolute;
+			top: -10000px;
+			z-index: 10001
+		}
+
+		.fb_dialog_advanced {
+			border-radius: 8px;
+			padding: 10px
+		}
+
+		.fb_dialog_content {
+			background: #fff;
+			color: #373737
+		}
+
+		.fb_dialog_close_icon {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+			cursor: pointer;
+			display: block;
+			height: 15px;
+			position: absolute;
+			right: 18px;
+			top: 17px;
+			width: 15px
+		}
+
+		.fb_dialog_mobile .fb_dialog_close_icon {
+			left: 5px;
+			right: auto;
+			top: 5px
+		}
+
+		.fb_dialog_padding {
+			background-color: transparent;
+			position: absolute;
+			width: 1px;
+			z-index: -1
+		}
+
+		.fb_dialog_close_icon:hover {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent
+		}
+
+		.fb_dialog_close_icon:active {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent
+		}
+
+		.fb_dialog_iframe {
+			line-height: 0
+		}
+
+		.fb_dialog_content .dialog_title {
+			background: #6d84b4;
+			border: 1px solid #365899;
+			color: #fff;
+			font-size: 14px;
+			font-weight: bold;
+			margin: 0
+		}
+
+		.fb_dialog_content .dialog_title>span {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+			float: left;
+			padding: 5px 0 7px 26px
+		}
+
+		body.fb_hidden {
+			height: 100%;
+			left: 0;
+			margin: 0;
+			overflow: visible;
+			position: absolute;
+			top: -10000px;
+			transform: none;
+			width: 100%
+		}
+
+		.fb_dialog.fb_dialog_mobile.loading {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+			min-height: 100%;
+			min-width: 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 0;
+			z-index: 10001
+		}
+
+		.fb_dialog.fb_dialog_mobile.loading.centered {
+			background: none;
+			height: auto;
+			min-height: initial;
+			min-width: initial;
+			width: auto
+		}
+
+		.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+			width: 100%
+		}
+
+		.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+			background: none
+		}
+
+		.loading.centered #fb_dialog_loader_close {
+			clear: both;
+			color: #fff;
+			display: block;
+			font-size: 18px;
+			padding-top: 20px
+		}
+
+		#fb-root #fb_dialog_ipad_overlay {
+			background: rgba(0, 0, 0, .4);
+			bottom: 0;
+			left: 0;
+			min-height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 100%;
+			z-index: 10000
+		}
+
+		#fb-root #fb_dialog_ipad_overlay.hidden {
+			display: none
+		}
+
+		.fb_dialog.fb_dialog_mobile.loading iframe {
+			visibility: hidden
+		}
+
+		.fb_dialog_mobile .fb_dialog_iframe {
+			position: sticky;
+			top: 0
+		}
+
+		.fb_dialog_content .dialog_header {
+			background: linear-gradient(from(#738aba), to(#2c4987));
+			border-bottom: 1px solid;
+			border-color: #1d3c78;
+			box-shadow: white 0 1px 1px -1px inset;
+			color: #fff;
+			font: bold 14px Helvetica, sans-serif;
+			text-overflow: ellipsis;
+			text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+			vertical-align: middle;
+			white-space: nowrap
+		}
+
+		.fb_dialog_content .dialog_header table {
+			height: 43px;
+			width: 100%
+		}
+
+		.fb_dialog_content .dialog_header td.header_left {
+			font-size: 12px;
+			padding-left: 5px;
+			vertical-align: middle;
+			width: 60px
+		}
+
+		.fb_dialog_content .dialog_header td.header_right {
+			font-size: 12px;
+			padding-right: 5px;
+			vertical-align: middle;
+			width: 60px
+		}
+
+		.fb_dialog_content .touchable_button {
+			background: linear-gradient(from(#4267B2), to(#2a4887));
+			background-clip: padding-box;
+			border: 1px solid #29487d;
+			border-radius: 3px;
+			display: inline-block;
+			line-height: 18px;
+			margin-top: 3px;
+			max-width: 85px;
+			padding: 4px 12px;
+			position: relative
+		}
+
+		.fb_dialog_content .dialog_header .touchable_button input {
+			background: none;
+			border: none;
+			color: #fff;
+			font: bold 12px Helvetica, sans-serif;
+			margin: 2px -12px;
+			padding: 2px 6px 3px 6px;
+			text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+		}
+
+		.fb_dialog_content .dialog_header .header_center {
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+			line-height: 18px;
+			text-align: center;
+			vertical-align: middle
+		}
+
+		.fb_dialog_content .dialog_content {
+			background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+			border: 1px solid #4a4a4a;
+			border-bottom: 0;
+			border-top: 0;
+			height: 150px
+		}
+
+		.fb_dialog_content .dialog_footer {
+			background: #f5f6f7;
+			border: 1px solid #4a4a4a;
+			border-top-color: #ccc;
+			height: 40px
+		}
+
+		#fb_dialog_loader_close {
+			float: left
+		}
+
+		.fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+			text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0
+		}
+
+		.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+			visibility: hidden
+		}
+
+		#fb_dialog_loader_spinner {
+			animation: rotateSpinner 1.2s linear infinite;
+			background-color: transparent;
+			background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			height: 24px;
+			width: 24px
+		}
+
+		@keyframes rotateSpinner {
+			0% {
+				transform: rotate(0deg)
+			}
+
+			100% {
+				transform: rotate(360deg)
+			}
+		}
+
+		.fb_iframe_widget {
+			display: inline-block;
+			position: relative
+		}
+
+		.fb_iframe_widget span {
+			display: inline-block;
+			position: relative;
+			text-align: justify
+		}
+
+		.fb_iframe_widget iframe {
+			position: absolute
+		}
+
+		.fb_iframe_widget_fluid_desktop,
+		.fb_iframe_widget_fluid_desktop span,
+		.fb_iframe_widget_fluid_desktop iframe {
+			max-width: 100%
+		}
+
+		.fb_iframe_widget_fluid_desktop iframe {
+			min-width: 220px;
+			position: relative
+		}
+
+		.fb_iframe_widget_lift {
+			z-index: 1
+		}
+
+		.fb_iframe_widget_fluid {
+			display: inline
+		}
+
+		.fb_iframe_widget_fluid span {
+			width: 100%
+		}
+	</style>
+</head>
+
+<body class="home blog wp-custom-logo hfeed no-boxed standard3-grid3 combine-layout title-block-8 sidebar-right">
+	<div id="page" class="site">
+		<header id="masthead" class="site-header">
+			<div class="header-6">
+				<!-- Search Form -->
+				<div class="search-popup">
+					<form role="search" method="get" id="searchform_topbar" class="search-top-bar-popup" action="/">
+						<label>
+							<span class="search-title">Looking for Something?</span>
+							<input class="search-field-top-bar" id="search-field-top-bar" placeholder="Search ..." value="" name="s" type="search">
+						</label>
+						<button id="search-top-bar-submit" type="submit" class="search-top-bar-submit"><span class="fa fa-search"></span></button>
+					</form>
+				</div>
+
+				<div id="header-logo" class="custom-header">
+					<div class="container">
+						<div class="row">
+							<div class="site-branding">
+								<a class="custom-logo-link" href="/" rel="home">
+									<img class="custom-logo" src="{{ url_for('static',path='logo3.png')}}" alt="">
+								</a>
+								<h1 class="site-title"><a href="/" rel="home">Sonia</a>
+								</h1>
+								<p class="site-description">Lifestyle &amp; Travel</p>
+							</div><!-- .site-branding -->
+						</div>
+					</div>
+				</div>
+				<div id="header-menu-sticky-wrapper" class="sticky-wrapper" style="height: 48px;">
+					<div id="header-menu" style="width: 1519px;">
+						<div class="container">
+							<div class="row">
+								<div class="menu-search-social">
+									<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars"></i><span class="screen-reader-text">Primary
+											Menu</span></button>
+									<nav id="site-navigation" class="main-navigation">
+										<div class="menu-main-menu-container">
+											<ul id="primary-menu" class="menu">
+												<li id="menu-item-389" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-389">
+													<a href="/">Home<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+													<ul class="sub-menu">
+														<li id="menu-item-606" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-606">
+															<a href="/?sidebar_layout=sidebar-left">Sidebar
+																Left</a></li>
+														<li id="menu-item-607" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-607">
+															<a href="/?sidebar_layout=sidebar-right">Sidebar
+																Right</a></li>
+														<li id="menu-item-608" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-608">
+															<a href="/?sidebar_layout=full-main">Page
+																w/no-sidebar</a></li>
+														<li id="menu-item-610" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-610">
+															<a href="/?sidebar_sticky=false">Sidebar
+																no Sticky</a></li>
+														<li id="menu-item-611" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-611">
+															<a href="/?sidebar_sticky=true">Sidebar
+																w Sticky</a></li>
+													</ul>
+												</li>
+												<li id="menu-item-1264" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1264">
+													<a href="/#">Layout<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+													<ul class="sub-menu">
+														<li id="menu-item-1265" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1265">
+															<a href="/?home_layout=standard">Standard
+																Layout</a></li>
+														<li id="menu-item-1266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1266">
+															<a href="/?home_layout=classic">Classic
+																Layout</a></li>
+														<li id="menu-item-1267" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1267">
+															<a href="/?home_layout=grid">Grid
+																Layout</a></li>
+														<li id="menu-item-1268" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1268">
+															<a href="/?home_layout=list">List
+																Layout</a></li>
+														<li id="menu-item-1269" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1269">
+															<a href="/?home_layout=boxed">Boxed
+																Layout</a></li>
+														<li id="menu-item-1270" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1270">
+															<a href="/?home_layout=texton">Texton
+																Layout</a></li>
+														<li id="menu-item-1271" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1271">
+															<a href="/?home_layout=gridtexton">GridTexton
+																Layout</a></li>
+														<li id="menu-item-1272" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1272">
+															<a href="/#">1st Standard<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-1273" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1273">
+																	<a href="/?home_layout=standard-grid">Standard
+																		&amp; Grid</a></li>
+																<li id="menu-item-1274" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1274">
+																	<a href="/?home_layout=standard-list">Standard
+																		&amp; List</a></li>
+																<li id="menu-item-1275" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1275">
+																	<a href="/?home_layout=standard-boxed">Standard
+																		&amp; Boxed</a></li>
+															</ul>
+														</li>
+														<li id="menu-item-1276" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1276">
+															<a href="/#">1st Classic<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-1277" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1277">
+																	<a href="/?home_layout=classic-grid">Classic
+																		&amp; Grid</a></li>
+																<li id="menu-item-1278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1278">
+																	<a href="/?home_layout=classic-list">Classic
+																		&amp; List</a></li>
+																<li id="menu-item-1279" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1279">
+																	<a href="/?home_layout=classic-boxed">Classic
+																		&amp; Boxed</a></li>
+																<li id="menu-item-1280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1280">
+																	<a href="/?home_layout=classic-gridtexton">Classic
+																		&amp; GridTexton</a></li>
+															</ul>
+														</li>
+														<li id="menu-item-1281" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1281">
+															<a href="/#">1st Texton<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-1282" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1282">
+																	<a href="/?home_layout=texton-grid">Texton
+																		&amp; Grid</a></li>
+																<li id="menu-item-1283" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1283">
+																	<a href="/?home_layout=texton-list">Texton
+																		&amp; List</a></li>
+																<li id="menu-item-1284" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1284">
+																	<a href="/?home_layout=texton-boxed">Texton
+																		&amp; Boxed</a></li>
+																<li id="menu-item-1285" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1285">
+																	<a href="/?home_layout=texton-gridtexton">Texton
+																		&amp; GridTexton</a></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li id="menu-item-405" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-405">
+													<a href="/#">Featured<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+													<ul class="sub-menu">
+														<li id="menu-item-556" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-556">
+															<a href="/#">Page Styles<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-545" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-545">
+																	<a href="/?body_boxed=boxed">Page
+																		w/boxed</a></li>
+																<li id="menu-item-557" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-557">
+																	<a href="/?body_boxed=false">Page
+																		no boxed</a></li>
+															</ul>
+														</li>
+														<li id="menu-item-439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-439">
+															<a href="/#">Header Styles<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-800" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-800">
+																	<a href="/?header_layout=menu-social">Menu
+																		Social</a></li>
+																<li id="menu-item-441" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-441">
+																	<a href="/?header_layout=menu-logo">Menu
+																		Logo</a></li>
+																<li id="menu-item-442" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-442">
+																	<a href="/?header_layout=logo-menu">Logo
+																		Menu</a></li>
+																<li id="menu-item-443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-443">
+																	<a href="/?header_layout=sticky-logo">Sticky
+																		Logo</a></li>
+																<li id="menu-item-444" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-444">
+																	<a href="/?header_layout=logo-sticky">Logo
+																		Sticky</a></li>
+															</ul>
+														</li>
+														<li id="menu-item-440" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-440">
+															<a href="/#">Slider Styles<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+															<ul class="sub-menu">
+																<li id="menu-item-407" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-407">
+																	<a href="/?featured_style=style-1">Slider
+																		Style 1</a></li>
+																<li id="menu-item-408" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-408">
+																	<a href="/?featured_style=style-2">Slider
+																		Style 2</a></li>
+																<li id="menu-item-409" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-409">
+																	<a href="/?featured_style=style-3">Slider
+																		Style 3</a></li>
+																<li id="menu-item-675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-675">
+																	<a href="/?featured_style=style-nivo">SLider
+																		Nivo</a></li>
+															</ul>
+														</li>
+														<li id="menu-item-609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-609">
+															<a href="/?smooth_scroll=true">w/
+																Smooth Scroll</a></li>
+														<li id="menu-item-612" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-612">
+															<a href="/?smooth_scroll=false">no
+																Smooth Scroll</a></li>
+														<li id="menu-item-413" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-413">
+															<a href="/typographic/">Typography</a>
+														</li>
+													</ul>
+												</li>
+												<li id="menu-item-525" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-525">
+													<a href="/#">Post Styles<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+													<ul class="sub-menu">
+														<li id="menu-item-527" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-527">
+															<a href="/2017/04/25/road-trip-through-south-eastern-pennsylvania/">Standard
+																Post</a></li>
+														<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-584">
+															<a href="/2017/04/26/501/">Quote
+																Post</a></li>
+														<li id="menu-item-524" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-524">
+															<a href="/2017/04/26/what-is-there-to-see-and-do-in-miami-florida/">Link
+																Post</a></li>
+														<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-585">
+															<a href="/2017/04/26/the-most-beautiful-college-libraries-in-america/">Gallery
+																Post</a></li>
+														<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-587">
+															<a href="/2017/04/25/exploring-the-kingdom-of-bhutan/">Image
+																Post</a></li>
+														<li id="menu-item-523" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-523">
+															<a href="/2017/04/26/emirates-reduces-flights-to-the-us-due-to-reduced-demand/">Audio
+																Post</a></li>
+														<li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-586">
+															<a href="/2017/04/26/traveling-with-a-crazy-girlfriend/">Video
+																Post</a></li>
+													</ul>
+												</li>
+												<li id="menu-item-615" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-615">
+													<a href="/category/lifestyle/">Lifestyle</a>
+												</li>
+												<li id="menu-item-417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-417">
+													<a href="/about-me-4/">About Me</a>
+												</li>
+												<li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421">
+													<a href="/contact-me/">Contact</a></li>
+												<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-831">
+													<a href="/shop/">Shop<span class="indicator"><i class="fa fa-angle-down"></i></span></a>
+													<ul class="sub-menu">
+														<li id="menu-item-1093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1093">
+															<a href="/checkout/">Checkout</a>
+														</li>
+														<li id="menu-item-1094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1094">
+															<a href="/cart/">Cart</a></li>
+													</ul>
+												</li>
+											</ul>
+										</div>
+									</nav><!-- #site-navigation -->
+									<!-- Search Form -->
+									<div class="section-icon">
+
+										<div class="top-header-icons">
+											<div id="menu-social" class="menu-social-container">
+												<ul id="menu-social-items" class="menu-items">
+													<li id="menu-item-446" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-446">
+														<a href="http://facebook.com/"><span class="screen-reader-text">Facebook</span></a></li>
+													<li id="menu-item-447" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-447">
+														<a href="http://twitter.com/"><span class="screen-reader-text">Twitter</span></a></li>
+													<li id="menu-item-448" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-448">
+														<a href="http://instagram.com/"><span class="screen-reader-text">Instagram</span></a></li>
+													<li id="menu-item-449" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-449">
+														<a href="http://pinterest.com/"><span class="screen-reader-text">Pinterest</span></a></li>
+													<li id="menu-item-555" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-555">
+														<a href="http://flickr.com/"><span class="screen-reader-text">Flickr</span></a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="icon-button-search">
+											<i class="fa fa-search"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</header><!-- #masthead -->
+		{% block content %}{% endblock %}
+		<!-- #content -->
+
+		<footer id="colophon" class="site-footer">
+			<div class="footer">
+				<div class="container">
+					<aside id="widget_sonia_social-2" class="widget widget_sonia_social">
+						<h4 class="footer-title">Sonia</h4>
+						<div class="widget-social">
+							<a href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i><span>Facebook</span></a>
+
+							<a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i><span>Twitter</span></a>
+
+							<a href="http://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i><span>Google Plus</span></a>
+
+							<a href="http://instagram.com/" target="_blank"><i class="fa fa-instagram"></i><span>Instagram</span></a>
+
+							<a href="http://pinterest.com/" target="_blank"><i class="fa fa-pinterest"></i><span>Pinterest</span></a>
+
+
+
+
+
+
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<div class="site-info-wrap">
+				<div class="container">
+					<div class="site-info">
+						<div class="site-desc">
+							© 2018 <a href="/">NeptuneTheme.</a>
+						</div>
+						<div class="site-powered">
+							<p>Made with love for great people.</p>
+							<p>Developed by <a href="/#">NeptuneTheme</a></p>
+						</div>
+					</div>
+				</div><!-- .site-info -->
+			</div>
+			<div class="back-to-top" style="display: none;">
+				<span><i class="fa fa-angle-up"></i></span>
+			</div>
+		</footer><!-- #colophon -->
+	</div><!-- #page -->
+
+	<div id="fb-root" class=" fb_reset">
+		<div style="position: absolute; top: -10000px; width: 0px; height: 0px;">
+
+			<div></div>
+		</div>
+	</div>
+</body>
+<style id="igor_ext_nofollow">
+	a[rel~='nofollow'] {
+		outline: .14em dotted red !important;
+		outline-offset: .2em;
+	}
+
+	a[rel~='nofollow']>img {
+		outline: 2px dotted red !important;
+		outline-offset: .2em;
+	}
+</style>
+
+</html>

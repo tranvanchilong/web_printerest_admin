@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block head %}
+<title>{{ data.meta_title }}</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ data.meta_title }}">
+<meta property="og:url" content="{{ data.meta_url }}">
+<meta property="og:description" content="{{ data.meta_description }}">
+<meta property="og:site_name" content="{{ data.meta_sitename }}">
+<meta name="twitter:card" content="{{ data.meta_description }}">
+<meta name="twitter:site" content="@{{ data.meta_sitename }}">
+<meta name="twitter:title" content="{{ data.meta_title }}">
+<meta name="twitter:description" content="{{ data.meta_description }}">
+<meta name="description" content="{{ data.meta_description }}">
+<meta name="robots" content="{{ data.meta_robots }}">
+<link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+<div id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+		<article id="post-40" class="post-40 post type-post status-publish format-standard has-post-thumbnail hentry category-girl tag-girl entry" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+			<div class="entry-post">
+				<div class="entry-content" itemprop="articleBody">
+					<span class="thumbnail-link">
+						<img width="1024" height="650" src="{{ data.img }}" class="entry-thumbnail wp-post-image" alt="Hot Beauty Woman" itemprop="image" data-attachment-id="138" data-permalink="{{ data.url }}"> </span>
+
+					<div class="gallery gallery-columns-6 gallery-size-thumbnail">
+						{% for img in data.imgs %}
+						<figure class="gallery-item">
+							<div class="gallery-icon landscape">
+								<a href="{{ img }}"><img width="150" height="150" src="{{ img }}" class="attachment-thumbnail size-thumbnail" alt="" itemprop="image" data-attachment-id="140" data-permalink="{{ img }}" data-image-title="{{ data.title }}" data-image-description="{{ data.description }}" scale="0"></a>
+							</div>
+						</figure>
+						{% endfor %}
+					</div>
+
+					{{ data.content }}
+
+					<div class="sharedaddy sd-sharing-enabled">
+						<div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing">
+							<h3 class="sd-title">Tags: </h3>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="related-posts">
+					<h3>You might also like …</h3>
+					<ul>
+						{% for n in range(0, 3) %}
+						<li>
+							<a class="thumbnail-link" href="{{ data.sidebars[n].url }}"><img width="1024" height="650" src="{{ data.sidebars[n].img }}" class="related-thumbnail wp-post-image" alt="{{ data.sidebars[n].title }}"></a>
+							<h2 class="entry-title"><a href="{{ data.sidebars[n].url }}" rel="bookmark">{{ data.sidebars[n].title }}</a></h2>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<!-- #comments -->
+
+			</div>
+
+			<div class="entry-meta">
+				<h1 class="entry-title" itemprop="headline">Hot Beauty Woman</h1>
+				<time class="entry-date published entry-side" datetime="2015-06-21T18:39:45+00:00" itemprop="datePublished">Published: <span>June 21, 2015</span></time>
+
+				<span class="entry-author author vcard entry-side" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+					Author: <a class="url fn n" href="http://demo.theme-junkie.com/silvia/author/admin/" itemprop="url"><span itemprop="name">admin</span></a> </span>
+
+				<span class="cat-links entry-side" itemprop="articleSection">
+					Category: <a href="http://demo.theme-junkie.com/silvia/category/girl/" rel="category tag">Girl</a> </span>
+				<span class="tag-links entry-side" itemprop="keywords">Tags: <a href="http://demo.theme-junkie.com/silvia/tag/girl/" rel="tag">girl</a></span>
+			</div>
+
+		</article><!-- #post-## -->
+	</main><!-- #main -->
+</div><!-- #primary -->
+{% endblock %}

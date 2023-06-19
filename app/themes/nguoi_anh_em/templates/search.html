@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="primary" class="content-area">
+	<div class="primary-inner">
+		<div id="content" class="site-content content-list" role="main">
+			{% for result in content.results %}
+			<article class="hentry">
+				<header class="entry-header">
+					<h2 class="entry-title"><a href="{{ result.url }}">{{ result.title}}</a></h2>
+				</header>
+				<div class="entry-content">
+					{{ result.excerpt }}
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}

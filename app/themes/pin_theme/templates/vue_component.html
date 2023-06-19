@@ -1,0 +1,112 @@
+<script type="text/x-template" id="vue-component-template">
+  <div>
+      <b-form v-on:keydown.enter.prevent class="main_form" style="display: flex; justify-content: center;">
+          <b-form-input
+              style="width: 50%;"
+              v-model="video_url"
+              placeholder="Paste Link Video"
+              class="u-border-1 u-border-grey-30 u-input u-input-rectangle"
+              required
+          ></b-form-input>
+          <b-button class="b_button" style="padding: 0px 35px 0px 35px;" variant="secondary" size="sm" v-on:click="getPDB">
+              {{posts.content.button.tran}}
+          </b-button>
+      </b-form>
+
+      <div v-if="this.image==''">
+        <ul class="ul_video" v-if="pdb_exists">
+            Link này không đúng, hãy thử link khác.
+        </ul>
+      </div>
+      <div v-else>
+        <ul class="ul_video" v-if="pdb_exists">
+            <a :href="this.image" download="image.jpg">
+                <button style="border-radius: 6px; color: white;">Download Image</button>
+            </a>
+            <a :href="this.video" download="video.mp4" >
+                <button style="border-radius: 6px;  color: white;">Download video</button>
+            </a>
+            <img :src="this.image" width="320" style="padding: 40px;"/>
+        </ul>
+      </div>
+      <div v-if="this.video_list.length !== 0">
+          <table>
+              <thead>
+                  <tr>
+                      <td>Download</td>
+                      <td>Size</td>
+                  </tr>
+              </thread>
+              <tbody>
+                  <tr v-for="item in this.video_list">
+                      <td>
+                          <a :href="'https://dl.pinterestdownloader.com/?ext=mp4&amp;source=pinterest&amp;url='+item.url" download="video.mp4">
+                              <button>Download video</button>
+                          </a>
+                      </td>
+                      <td>[[item.size]] MB</td>
+                  </tr>
+              </tbody>
+      </div>
+  </div>
+  <style>
+
+  .justify-content-center{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    }
+
+
+  </style>
+</script>
+<script type="text/x-template" id="vue-component-template2">
+  <div>
+      jkdhsk
+  </div>
+  <style>
+
+
+  .justify-content-center{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    }
+  </style>
+</script>
+<script>
+  var vue_component = {
+    delimiters: ["[[", "]]"],
+    data: function () {
+      return {
+        video: "",
+        image: "",
+        video_list: [],
+        pdb_exists: false,
+      };
+    },
+    methods: {
+      getPDB() {
+        axios
+          .post("en/pin_get", { url: this.video_url })
+          .then((response) => {
+            this.video =
+              "https://dl.pinterestdownloader.com/?ext=mp4&amp;source=pinterest&amp;url=" +
+              response.data.video;
+            this.image = response.data.image;
+            this.video_list = response.data.video_list;
+            // Show the list of attributes
+            this.pdb_exists = true;
+          })
+          .catch((e) => console.log("There was an error!"));
+        // alert(this.image);
+      },
+    },
+    // dá: alert(methods),
+    template: "#vue-component-template",
+  };
+</script>

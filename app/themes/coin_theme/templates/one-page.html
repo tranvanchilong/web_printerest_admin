@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>{{ data.meta_title }}</title>
+    <meta name="description" content="{{ data.meta_description }}">
+    <meta name="robots" content="{{ data.meta_robots }}">
+    <link rel="canonical" href="{{ data.meta_url }}">
+{% endblock %}
+{% block content %}
+<main class="content" id="genesis-content">
+    <div class="home-bottom widget-area">
+        <header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">{{ data.post.name }}</h1>
+			<p>{{ data.meta_description }}</p>
+		</header>
+		<section class="widget featured-content featuredpost">
+			<div class="widget-wrap">
+				<article class="post type-post status-publish format-standard has-post-thumbnail category-lifestyle tag-colorado tag-skiing entry">
+					{{ data.post }}
+				</article>
+			</div>
+		</section>
+	</div>
+</main>
+{% endblock %}

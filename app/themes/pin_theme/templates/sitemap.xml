@@ -1,0 +1,7 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for post in posts %}
+    <url>
+        <loc>https://pinterestdownloader/{{post["lang"]|safe}}</loc>
+        <lastmod>10-10-2023</lastmod>     
+    </url>
+    {%endfor%}
